@@ -59,3 +59,13 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+
+
+      - run:
+        name: rubocop
+        context: [
+          GITHUB_ACCESS_TOKEN,
+          CIRCLE_BUILD_URL,
+          CI_PULL_REQUEST
+        ]
+        command: sh run_with_rubocop.sh
