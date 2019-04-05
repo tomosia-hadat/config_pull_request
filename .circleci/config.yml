@@ -16,9 +16,7 @@ jobs:
 
     working_directory: ~/repo
 
-    step:
-      - checkout
-
+    steps:
       # Download and cache dependencies
       - restore_cache:
           keys:
